@@ -14,25 +14,23 @@ export default function Home() {
 	const [animationClass, setAnimationClass] = useState('')
 
 	const highlightedImages = [
-		'/highlighted/1641130949.jpg',
-		'/highlighted/1641130949(1).jpg',
-		'/highlighted/1641130949(2).jpg',
-		'/highlighted/1641131401(1).jpg',
+		'/highlighted/MACHINE-37.jpg',
+		'/highlighted/MACHINE-26.jpg',
+		'/highlighted/MACHINE-18.jpg',
+		'/highlighted/MACHINE-35.jpg',
 	]
 
 	const galleryImages = [
-		'/gallery/1641131401(2).jpg',
-		'/gallery/1641131401(3).jpg',
-		'/gallery/1641131401(4).jpg',
-		'/gallery/1641133928.jpg',
-		'/gallery/1641133930.jpg',
-		'/gallery/1641133931.jpg',
-		'/gallery/1641133931 (1).jpg',
-		'/gallery/1641133931 (2).jpg',
-		'/gallery/1641133931 (3).jpg',
-		'/gallery/1641133931 (4).jpg',
-		'/gallery/1641133931 (5).jpg',
-		'/gallery/1641133932.jpg',
+		'/gallery/MACHINE-22.jpg',
+		'/gallery/MACHINE-27.jpg',
+		'/gallery/MACHINE-30.jpg',
+		'/gallery/MACHINE-33.jpg',
+		'/gallery/MACHINE-36.jpg',
+		'/gallery/MACHINE-39.jpg',
+		'/gallery/MACHINE-43.jpg',
+		'/gallery/MACHINE-45.jpg',
+		'/gallery/MACHINE-48.jpg',
+		'/gallery/MACHINE-52.jpg'
 	]
 
 	useEffect(() => {
@@ -108,7 +106,7 @@ export default function Home() {
 		<div className="min-h-screen bg-neutral-900 text-neutral-50">
 			<section className="relative h-screen">
 				<Image
-					src="/highlighted/1641131401.jpg"
+					src="/cover/MACHINE-42.jpg"
 					height={613}
 					width={1089}
 					alt="Project Car Hero"
@@ -128,8 +126,8 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-				<h2 className="text-4xl font-bold mb-12 text-center">Highlights</h2>
+			<section className="py-8 px-4 md:px-8 max-w-7xl mx-auto">
+				<h2 className="text-4xl font-semibold mb-12 text-center">Destacadas</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 					{highlightedImages.map((src, index) => (
 						<div key={index} className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
@@ -144,7 +142,7 @@ export default function Home() {
 							<div
 								className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
 								<p className="text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
-									View Fullscreen
+									Ver a pantalla completa
 								</p>
 							</div>
 						</div>
@@ -153,7 +151,7 @@ export default function Home() {
 			</section>
 
 			<section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-				<h2 className="text-4xl font-bold mb-12 text-center">Gallery</h2>
+				<h2 className="text-4xl font-semibold mb-12 text-center">Galería</h2>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 					{galleryImages.map((src, index) => (
 						<div key={index} className="relative overflow-hidden cursor-pointer"
@@ -168,7 +166,7 @@ export default function Home() {
 							<div
 								className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
 								<p className="text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity duration-300">
-									View Fullscreen
+									Ver a pantalla completa
 								</p>
 							</div>
 						</div>
@@ -178,7 +176,8 @@ export default function Home() {
 
 			<footer className="bg-neutral-800 py-8 px-4 md:px-8">
 				<div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-					<p className="mb-4 md:mb-0">&copy; 2024 Copa Turbo Project Car Showcase. All rights reserved.</p>
+					<p className="mb-4 md:mb-0 text-sm">&copy; 2024 Copa Turbo Project Car Showcase. Todos los derechos
+						reservados.</p>
 					<div className="flex space-x-4">
 						<a href="https://www.instagram.com/copaturbo83"
 						   target="_blank"
@@ -213,15 +212,15 @@ export default function Home() {
 					<div className="max-w-full max-h-full overflow-hidden">
 						<img
 							src={fullscreenImage.section === 'highlights' ? highlightedImages[fullscreenImage.index] : galleryImages[fullscreenImage.index]}
-							alt={`Fullscreen ${fullscreenImage.section === 'highlights' ? 'Highlighted' : 'Gallery'} Image ${fullscreenImage.index + 1}`}
+							alt={`Fullscreen ${fullscreenImage.section === 'highlights' ? 'Highlighted' : 'Gallery'} Imagen ${fullscreenImage.index + 1}`}
 							className={`w-auto h-auto max-w-full max-h-[calc(100vh-8rem)] object-contain transition-opacity duration-300 ${animationClass}`}
 						/>
 					</div>
 					<div
 						className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-2 rounded-full">
 						<p className="text-white text-sm font-semibold">
-							{fullscreenImage.section === 'highlights' ? 'Highlights' : 'Gallery'} -
-							Image {fullscreenImage.index + 1}
+							{fullscreenImage.section === 'highlights' ? 'Destacadas' : 'Galería'} -
+							Imagen {fullscreenImage.index + 1}
 						</p>
 					</div>
 				</div>
